@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <title>Document</title>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+        font-family: sans-serif;
+      }
+      .container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+      }
+      .counter-div {
+        width: 600px;
+        height: 400px;
+        background-image: linear-gradient(to top left, orange, orangered);
+        color: aliceblue;
+        border-radius: 3rem;
+      }
+      .title {
+        margin-top: 2rem;
+        display: flex;
+        justify-content: center;
+        margin-bottom: 2rem;
+      }
+      .counter {
+        display: flex;
+        text-align: center;
+        justify-content: center;
+        margin-bottom: 2rem;
+        font-size: 3rem;
+      }
+      .buttons {
+        margin-top: 1rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .buttons button {
+        padding: 1rem 2rem;
+        margin: 1rem;
+        border-radius: 10px;
+        cursor: pointer;
+        /* border: none; */
+      }
+      hr {
+        width: 80%;
+        margin: auto;
+        border: none;
+        border-bottom: 2px solid greenyellow;
+      }
+      button:hover {
+        /* background-image: linear-gradient(to top left, orange, orangered); */
+
+        background-color: cornflowerblue;
+        transition: 1.5s ease-in;
+        color: aliceblue;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="counter-div">
+        <div class="title">
+          <h2 class="animate__animated animate__bounce">Counter App</h2>
+        </div>
+        <span class="counter">0</span>
+        <hr />
+        <div class="buttons">
+          <button class="sub">Sub</button>
+          <button class="reset">Reset</button>
+          <button class="add">Add</button>
+        </div>
+      </div>
+    </div>
+    <h1 class="animate__animated animate__bounce">An animated element</h1>
+    <h1 class="animate__animated animate__flash">An animated element</h1>
+
+    <script>
+      const count = document.querySelector(".counter");
+      const buttons = document.querySelector(".buttons");
+
+      let result = 0;
+      buttons.addEventListener("click", function (e) {
+        if (e.target.classList.contains("add")) {
+          result += 1;
+          count.innerHTML = result;
+        }
+        if (e.target.classList.contains("sub")) {
+          result -= 1;
+          count.innerHTML = result;
+        }
+        if (e.target.classList.contains("reset")) {
+          count.innerHTML = 0;
+        }
+      });
+
+      const num = [1, 3, 5, 2, 6, 8, 9, 2, 3];
+      const exisistingIndex = num.findIndex((item) => item === 22);
+      console.log(exisistingIndex);
+
+      console.log("working");
+      //    let result = 0;
+      // add.addEventListener('click', function () {
+      //     result += 1;
+      //     count.innerHTML = result;
+      //     if(result > 0){
+      //         count.style.color = 'green'
+      //     }
+      // });
+      //         sub.addEventListener('click', function () {
+      //     result -= 1;
+      //     count.innerHTML = result;
+      //     if(result  < 0){
+      //         count.style.color = 'red'
+      //     }
+      // });
+
+      // resetcount.addEventListener('click', function () {
+      //     result = 0;
+      //     count.innerHTML = result;
+      //     if(result = 1){
+      //         count.style.color = 'white'
+
+      //     }
+      // });
+    </script>
+  </body>
+</html>
